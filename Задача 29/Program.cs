@@ -11,12 +11,12 @@ int[] CreateArray(int size)
 {
     return new int[size];
 }
-void FillArray(int[] arr)
+void FillArray(int[] arr,int a,int b)
 {
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = rnd.Next(100);
+        arr[i] = rnd.Next(a,b+1);
        // Console.Write(arr[i]);
        // Console.Write(" ");
     }
@@ -32,7 +32,10 @@ string PrintArray(int[] arr)
     return str;
 }
 int size = InputNum("Введи кол-во элементов массива: ");
+int a = InputNum("Введи нижнюю границу элементов массива: ");
+int b = InputNum("Введи верхнюю границу элементов массива: ");
+
 int[] arr = CreateArray(size);
-FillArray(arr);
+FillArray(arr,a,b);
 string answer = PrintArray(arr);
 Console.WriteLine(answer);
